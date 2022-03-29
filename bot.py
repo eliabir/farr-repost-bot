@@ -8,7 +8,7 @@ from discord.ext import commands
 from dotenv import load_dotenv
 
 from .Modules._UrlChecker import url_check
-from .Modules._DBrefresh import refresh_db
+from .Modules._DBreindex import refresh_db
 
 load_dotenv()
 
@@ -38,10 +38,11 @@ async def on_message(message):
     if not urls:
         return
 
+    
 
 
 @bot.command
-async def db_refresh(ctx):
+async def db_reindex(ctx):
     current_time = datetime.now()
     time_delta = current_time - last_db_refresh
 
